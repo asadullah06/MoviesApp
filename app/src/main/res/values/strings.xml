@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Movies</string>
+    <string name="movies_anywhere">Movies Anywhere</string>
+    <string name="poster">poster</string>
+    <string name="book">Book</string>
+    <string name="adult">Adult</string>
+    <string name="non_adult">Non adult</string>
+    <string name="watch_trailer">Watch Trailer</string>
+    <string name="genres">Genres</string>
+    <string name="date">Date</string>
+    <string name="overview">Overview</string>
+</resources>
