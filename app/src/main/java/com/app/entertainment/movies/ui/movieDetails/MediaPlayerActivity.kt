@@ -2,6 +2,7 @@ package com.app.entertainment.movies.ui.movieDetails
 
 import android.os.Bundle
 import android.util.Log
+import android.view.MenuItem
 import androidx.annotation.NonNull
 import com.app.entertainment.movies.databinding.MediaPlayerActivityBinding
 import com.app.entertainment.movies.ui.BaseActivity
@@ -17,6 +18,18 @@ class MediaPlayerActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         binding = MediaPlayerActivityBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        supportActionBar?.title = "Movie Details"
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        when (item?.itemId) {
+            android.R.id.home -> {
+                onBackPressed()
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     override fun onResume() {

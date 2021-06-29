@@ -38,7 +38,6 @@ class MovieDetailsActivity : BaseActivity() {
             }
         }
         return super.onOptionsItemSelected(item)
-
     }
 
     private fun setClickOnPlayTrailerButton() {
@@ -65,9 +64,11 @@ class MovieDetailsActivity : BaseActivity() {
                     genresString.add(genresModels[i].genresName)
                 }
                 if (genresString.isNotEmpty()) {
-                    binding.genresDetailsTextview.text = genresString.toString().replace("[", "").replace("]", "")
+                    binding.genresDetailsTextview.text =
+                        genresString.toString().replace("[", "").replace("]", "")
                 }
 
+                binding.ratingTextview.text = it.avgVote.toString()
             }
         })
 

@@ -40,14 +40,31 @@
         app:layout_constraintTop_toBottomOf="@+id/SliderDots"
         tools:text="Movie Title" />
 
-    <me.zhanghai.android.materialratingbar.MaterialRatingBar
-        android:id="@+id/materialRatingBar"
-        style="@style/Widget.MaterialRatingBar.RatingBar"
+    <LinearLayout
+        android:id="@+id/rating_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+
+        android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
-        app:mrb_progressTint="@color/design_default_color_primary"
-        app:layout_constraintTop_toBottomOf="@+id/movie_title_textview" />
+        app:layout_constraintTop_toBottomOf="@+id/movie_title_textview">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_star" />
+
+        <TextView
+            android:id="@+id/rating_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            tools:text="dummy rating" />
+    </LinearLayout>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/watch_trailer_button"
@@ -60,7 +77,7 @@
         android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/materialRatingBar" />
+        app:layout_constraintTop_toBottomOf="@+id/rating_layout" />
 
     <TextView
         android:id="@+id/genres_title"

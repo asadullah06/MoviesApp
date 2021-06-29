@@ -13,6 +13,8 @@ public class MovieDetailsModel {
     private String releaseDate;
     @SerializedName("popularity")
     private float moviePopularity;
+    @SerializedName("vote_average")
+    private float avgVote;
 
     public String getOverview() {
         return overview;
@@ -32,5 +34,9 @@ public class MovieDetailsModel {
 
     public float getMoviePopularity() {
         return moviePopularity;
+    }
+
+    public float getAvgVote() {
+        return avgVote;
     }
 }

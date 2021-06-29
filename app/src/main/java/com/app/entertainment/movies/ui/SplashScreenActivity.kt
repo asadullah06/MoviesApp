@@ -7,7 +7,7 @@ import com.app.entertainment.movies.databinding.SplashScreenBinding
 import com.app.entertainment.movies.ui.moviesListing.MoviesListingActivity
 import com.app.entertainment.movies.utils.SPLASH_SCREEN_TIMER
 
-class SplashScreenActivity : Activity() {
+class SplashScreenActivity : BaseActivity() {
     lateinit var binding: SplashScreenBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

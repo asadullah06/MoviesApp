@@ -8,7 +8,6 @@ import com.app.entertainment.movies.databinding.MoviesListingActivityBinding
 import com.app.entertainment.movies.ui.BaseActivity
 import com.app.entertainment.movies.ui.movieDetails.MovieDetailsActivity
 import com.app.entertainment.movies.utils.MOVIE_ID
-import com.paginate.Paginate
 
 
 class MoviesListingActivity : BaseActivity() {
