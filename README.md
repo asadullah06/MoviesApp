@@ -46,6 +46,5 @@ Asadullah Mumtaz
 
   [url1]: <https://developers.themoviedb.org/3/movies/get-popular-movies>
   [url2]: <https://github.com/PierfrancescoSoffritti/android-youtube-player#chromecast>
-r
 
 
