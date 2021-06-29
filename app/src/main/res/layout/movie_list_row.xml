@@ -23,6 +23,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:textColor="@color/black"
+        app:layout_constraintEnd_toStartOf="@+id/book_ticket_button"
         app:layout_constraintStart_toEndOf="@+id/poster_imageview"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Movie name" />
@@ -33,6 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
 
+        app:layout_constraintEnd_toStartOf="@+id/book_ticket_button"
         app:layout_constraintStart_toStartOf="@+id/movie_name_textview"
         app:layout_constraintTop_toBottomOf="@+id/movie_name_textview"
         tools:text="dummy date" />
@@ -42,6 +44,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/book_ticket_button"
         app:layout_constraintStart_toStartOf="@+id/movie_name_textview"
         app:layout_constraintTop_toBottomOf="@+id/movie_release_date_textview"
         tools:text="Non adult" />
