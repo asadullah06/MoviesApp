@@ -16,7 +16,7 @@ This project contains the API cunsumtion of Movies and their details . APIs docu
 
 ## Tools and Technalogies used to develop the app
 * Jetpack components like ViewModel, ViewBinding, Androidx
-* Third party library to play youtube video can be dount at [Library lin][url2]
+* Third party library to play youtube video can be found at [Library link][url2]
 * Retrofit and OkHttp for the netwoork requests.
 * Constraint layout for the designing the screens
 
