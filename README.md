@@ -41,6 +41,9 @@ This project contains the API cunsumtion of Movies and their details . APIs docu
 ##  Version
 Current Version ```1.0```
 
+## Demo Video
+https://user-images.githubusercontent.com/33278346/125297750-f6070780-e340-11eb-8cb7-ac19b822cfc6.mp4
+
 ## Developed By
 Asadullah Mumtaz
 
