@@ -1,4 +1,4 @@
-# Android Movies Listind and details Task
+# Android Movies Listind and details App
 
 This project contains the API cunsumtion of Movies and their details . APIs documentation is here [Document Link][url1]
 
