@@ -6,6 +6,7 @@ import com.app.entertainment.movies.data.remote.MovieVideosModel
 import com.app.entertainment.movies.data.remote.UpcomingMoviesResponseModel
 import com.app.entertainment.movies.utils.API_KEY
 import retrofit2.Call
+import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
@@ -13,27 +14,27 @@ import retrofit2.http.Query
 interface ApiHelper {
 
     @GET("/3/movie/upcoming")
-    fun getupComingMoviesList(
+    suspend fun getupComingMoviesList(
         @Query("page") pageToLoad: Int,
         @Query("api_key") apiKey: String = API_KEY
-    ): Call<UpcomingMoviesResponseModel>
+    ): Response<UpcomingMoviesResponseModel>
 
     @GET("/3/movie/{movie_id}")
-    fun getMovieDetails(
+    suspend fun getMovieDetails(
         @Path("movie_id") movieId: Int,
         @Query("api_key") apiKey: String = API_KEY
-    ): Call<MovieDetailsModel>
+    ): Response<MovieDetailsModel>
 
     @GET("/3/movie/{movie_id}/images")
-    fun getMovieImages(
+    suspend fun getMovieImages(
         @Path("movie_id") movieId: Int,
         @Query("api_key") apiKey: String = API_KEY
-    ): Call<MovieImagesModel>
+    ): Response<MovieImagesModel>
 
     @GET("/3/movie/{movie_id}/videos")
-    fun getMovieVideos(
+    suspend fun getMovieVideos(
         @Path("movie_id") movieId: Int,
         @Query("api_key") apiKey: String = API_KEY
-    ): Call<MovieVideosModel>
+    ): Response<MovieVideosModel>
 
 }

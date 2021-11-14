@@ -23,8 +23,8 @@ class MediaPlayerActivity : BaseActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        when (item?.itemId) {
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
             android.R.id.home -> {
                 onBackPressed()
             }
@@ -38,7 +38,7 @@ class MediaPlayerActivity : BaseActivity() {
         binding.youtubePlayerView.addYouTubePlayerListener(object :
             AbstractYouTubePlayerListener() {
             override fun onReady(@NonNull youTubePlayer: YouTubePlayer) {
-                val videoId = intent.getStringExtra(VIDEO_URL)
+                val videoId = intent.getStringExtra(VIDEO_URL) ?: ""
                 youTubePlayer.loadVideo(videoId, 0f)
             }
 
