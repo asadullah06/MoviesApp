@@ -3,6 +3,7 @@ package com.app.entertainment.movies.ui.moviesListing
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
+import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.app.entertainment.movies.databinding.MoviesListingActivityBinding
@@ -47,10 +48,10 @@ class MoviesListingActivity : BaseActivity() {
 
                 when (event) {
                     is MoviesListingViewModel.MoviesListingEvents.Loading -> {
-                        showProgressDialog()
+                        startShimmerAnimation()
                     }
                     is MoviesListingViewModel.MoviesListingEvents.Success -> {
-                        hideProgressDialog()
+                        stopShimmerAnimation()
                         if (moviesListingAdapter.moviesList.isEmpty())
                             moviesListingAdapter.moviesList =
                                 event.moviesObject.getUpcomingMovies().toCollection(ArrayList())
@@ -64,7 +65,7 @@ class MoviesListingActivity : BaseActivity() {
 
                     }
                     is MoviesListingViewModel.MoviesListingEvents.Failure -> {
-                        hideProgressDialog()
+                        stopShimmerAnimation()
                         Snackbar.make(binding.root, event.errorText, Snackbar.LENGTH_LONG).show()
                     }
 
@@ -73,5 +74,15 @@ class MoviesListingActivity : BaseActivity() {
             }
 
         }
+    }
+
+    private fun startShimmerAnimation() {
+        binding.shimmerViewContainer.startShimmerAnimation()
+        binding.shimmerViewContainer.isVisible = true
+    }
+
+    private fun stopShimmerAnimation() {
+        binding.shimmerViewContainer.stopShimmerAnimation()
+        binding.shimmerViewContainer.isVisible = false
     }
 }

@@ -103,6 +103,8 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.4.0'
 
     implementation ("androidx.lifecycle:lifecycle-common-java8:2.4.0")
+
+    implementation 'com.facebook.shimmer:shimmer:0.1.0'
 }
 repositories {
     mavenCentral()
