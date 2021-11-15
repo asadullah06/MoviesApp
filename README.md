@@ -36,9 +36,9 @@ This project contains the API cunsumtion of Movies and their details . APIs docu
 
 ## Compatibility
  
- * All Android devices with above sdk version 19
- * All Android tablets with above sdk version 19
- * Minimum Android version: 4.4
+ * All Android devices with above sdk version 23
+ * All Android tablets with above sdk version 23
+ * Minimum Android version: 6.0
  
 ##  Version
 Current Version ```1.0```
