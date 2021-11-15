@@ -1,4 +1,4 @@
-# Android Movies Listind and details Task
+# Android Movies Listind and details App
 
 This project contains the API cunsumtion of Movies and their details . APIs documentation is here [Document Link][url1]
 
@@ -15,7 +15,9 @@ This project contains the API cunsumtion of Movies and their details . APIs docu
 * run the project on the selected device or emulator
 
 ## Tools and Technalogies used to develop the app
-* Jetpack components like ViewModel, ViewBinding, Androidx
+* Jetpack components like ViewModel, coroutines, ViewBinding, Kotlin stateflow, Androidx
+* Dependency injection usiing dagger Hilt
+* Facebook shimmer view to show loading animation
 * Third party library to play youtube video can be found at [Library link][url2]
 * Retrofit and OkHttp for the netwoork requests.
 * Constraint layout for the designing the screens
@@ -30,19 +32,20 @@ This project contains the API cunsumtion of Movies and their details . APIs docu
 
 ## Architecture
 
-```MVVM``` (Model View ViewModel) approach is used in development of this projec
+```MVVM``` (Model View ViewModel) approach is used in development of this project
 
 ## Compatibility
  
- * All Android devices with above sdk version 19
- * All Android tablets with above sdk version 19
- * Minimum Android version: 4.4
+ * All Android devices with above sdk version 23
+ * All Android tablets with above sdk version 23
+ * Minimum Android version: 6.0
  
 ##  Version
 Current Version ```1.0```
 
 ## Demo Video
-https://user-images.githubusercontent.com/33278346/125297750-f6070780-e340-11eb-8cb7-ac19b822cfc6.mp4
+
+https://user-images.githubusercontent.com/33278346/141744634-b276a5da-cb79-404e-9d88-0c9512c69f08.mp4
 
 ## Developed By
 Asadullah Mumtaz
