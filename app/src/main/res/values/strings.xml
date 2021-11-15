@@ -9,4 +9,5 @@
     <string name="genres">Genres</string>
     <string name="date">Date</string>
     <string name="overview">Overview</string>
+    <string name="retry">Retry</string>
 </resources>

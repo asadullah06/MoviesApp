@@ -51,4 +51,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:listitem="@layout/movie_list_row" />
+
+    <include
+        android:id="@+id/no_connectivity_layout"
+        layout="@layout/connectivity_error_layout"
+        android:visibility="gone"
+        android:gravity="center" />
 </androidx.constraintlayout.widget.ConstraintLayout>

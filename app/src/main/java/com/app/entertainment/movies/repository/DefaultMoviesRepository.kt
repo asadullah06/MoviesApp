@@ -1,16 +1,19 @@
 package com.app.entertainment.movies.repository
 
+import android.content.Context
 import android.util.Log
 import com.app.entertainment.movies.data.remote.MovieDetailsModel
 import com.app.entertainment.movies.data.remote.MovieImagesModel
 import com.app.entertainment.movies.data.remote.MovieVideosModel
 import com.app.entertainment.movies.data.remote.UpcomingMoviesResponseModel
 import com.app.entertainment.movies.networkcalls.ApiHelper
+import com.app.entertainment.movies.utils.CommonMethods
 import com.app.entertainment.movies.utils.Resource
 import javax.inject.Inject
 
 class DefaultMoviesRepository @Inject constructor(
-    private val api: ApiHelper
+    private val api: ApiHelper,
+    private val appContext: Context
 ) : MoviesRepository {
 
     val TAG = "DefaultMoviesRepository"
@@ -20,18 +23,22 @@ class DefaultMoviesRepository @Inject constructor(
      * @param movieId to pass in the API request
      */
     override suspend fun getMovieDetails(movieId: Int): Resource<MovieDetailsModel> {
-        return try {
+        try {
+            if (CommonMethods.isOnline(appContext).not()) {
+                return Resource.Error("No internet connection")
+            }
+
             val response = api.getMovieDetails(movieId)
             val result = response.body()
 
-            if (response.isSuccessful && result != null) {
+            return if (response.isSuccessful && result != null) {
                 Log.i(TAG, result.toString())
                 Resource.Success(result)
             } else {
                 Resource.Error(response.message())
             }
         } catch (e: Exception) {
-            Resource.Error(e.message ?: "An error occurred")
+            return Resource.Error(e.message ?: "An error occurred")
         }
     }
 
@@ -77,19 +84,23 @@ class DefaultMoviesRepository @Inject constructor(
     override suspend fun getMoviesList(
         pageToLoad: Int
     ): Resource<UpcomingMoviesResponseModel> {
-        return try {
+        try {
+
+            if (CommonMethods.isOnline(appContext).not()) {
+                return Resource.Error("No internet connection")
+            }
             val response = api.getupComingMoviesList(pageToLoad)
             val result = response.body()
 
             if (response.isSuccessful && result != null) {
                 Log.i(TAG, result.toString())
-                Resource.Success(result)
+                return Resource.Success(result)
             } else {
                 Log.e(TAG, response.errorBody().toString())
-                Resource.Error(response.message())
+                return Resource.Error(response.message())
             }
         } catch (e: Exception) {
-            Resource.Error(e.message ?: "An error occurred")
+            return Resource.Error(e.message ?: "An error occurred")
         }
     }
 }

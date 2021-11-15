@@ -1,5 +1,6 @@
 package com.app.entertainment.movies.di
 
+import android.content.Context
 import com.app.entertainment.movies.networkcalls.ApiHelper
 import com.app.entertainment.movies.repository.DefaultMoviesRepository
 import com.app.entertainment.movies.repository.MoviesRepository
@@ -8,6 +9,7 @@ import com.app.entertainment.movies.utils.DispatcherProvider
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
@@ -29,8 +31,8 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun provideMoviesRepository(api: ApiHelper): MoviesRepository =
-        DefaultMoviesRepository(api)
+    fun provideMoviesRepository(@ApplicationContext appContext:Context, api: ApiHelper): MoviesRepository =
+        DefaultMoviesRepository(api,appContext)
 
     @Singleton
     @Provides

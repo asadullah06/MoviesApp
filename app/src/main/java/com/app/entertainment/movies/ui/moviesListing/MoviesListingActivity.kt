@@ -66,13 +66,11 @@ class MoviesListingActivity : BaseActivity() {
                     }
                     is MoviesListingViewModel.MoviesListingEvents.Failure -> {
                         stopShimmerAnimation()
+                        showErrorView(event.errorText)
                         Snackbar.make(binding.root, event.errorText, Snackbar.LENGTH_LONG).show()
                     }
-
                 }
-
             }
-
         }
     }
 
@@ -84,5 +82,14 @@ class MoviesListingActivity : BaseActivity() {
     private fun stopShimmerAnimation() {
         binding.shimmerViewContainer.stopShimmerAnimation()
         binding.shimmerViewContainer.isVisible = false
+    }
+
+    private fun showErrorView(errorText: String) {
+        binding.noConnectivityLayout.root.isVisible = true
+        binding.noConnectivityLayout.errorMessageTextView.text = errorText
+        binding.noConnectivityLayout.retryButton.setOnClickListener {
+            binding.noConnectivityLayout.root.isVisible = false
+            moviesListingViewModel.getMoviesList()
+        }
     }
 }

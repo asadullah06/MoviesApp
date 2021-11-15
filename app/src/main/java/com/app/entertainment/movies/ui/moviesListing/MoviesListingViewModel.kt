@@ -36,7 +36,7 @@ class MoviesListingViewModel @Inject constructor(
         getMoviesList()
     }
 
-    private fun getMoviesList() {
+    fun getMoviesList() {
 
         viewModelScope.launch(dispatcher.io) {
             _moviesListStateFlow.value = MoviesListingEvents.Loading

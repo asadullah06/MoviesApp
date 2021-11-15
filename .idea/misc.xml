@@ -3,9 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="app/src/main/res/layout/data_placeholder_layout.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/connectivity_error_layout.xml" value="0.22864583333333333" />
+        <entry key="app/src/main/res/layout/connectivty_error_layout.xml" value="0.22864583333333333" />
+        <entry key="app/src/main/res/layout/data_placeholder_layout.xml" value="0.25" />
         <entry key="app/src/main/res/layout/movie_list_row.xml" value="0.11018518518518519" />
-        <entry key="app/src/main/res/layout/movies_listing_activity.xml" value="0.11018518518518519" />
+        <entry key="app/src/main/res/layout/movies_listing_activity.xml" value="0.25" />
         <entry key="app/src/main/res/layout/progress_dialog_layout.xml" value="0.22864583333333333" />
       </map>
     </option>
